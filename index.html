@@ -1,9 +1,9 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Two Different jQuery Animation Methods 
+[ yes ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
@@ -21,40 +21,81 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+ <center><img src= "https://txt.1001fonts.net/img/txt/dHRmLjk2LjAwMDAwMC5VWFZwZWlCaFltOTFkQ0JEYUdWeWFYTnpaUSwsLjA,/freakshow.regular.webp" width = "800"/></center>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="music-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        🎥 What is my favorite song by Imogen Heap?
+        <select id="music-answer">
+          <option value="music1">Just For Now</option>
+          <option value="music2">Goodnight and Go</option>
+          <option value="music3">Headlock</option>
+          <option value="music4">Hide And Seek</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">to be or not to be..the answer.</button>
     </form>
-    <div id="movie-result"></div>
+    
+    <div id="music-result"> <p id= "music-text">
+      
+      </p> <img id= "img1" src= "https://i.scdn.co/image/ab67616d0000b273866872ba52cf201fc33995cc" width= "500" style= "display:none "/></div>
+    
+
+      
+  
+   
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="movie-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        📖 What's my favorite Disney Movie?
+        <select id="movie-answer">
+          <option value="movie1">"Sleeping Beauty"</option>
+          <option value="movie2">"Cinderella"</option>
+          <option value="movie3">"The Fox And The Hound"</option>
+          <option value="movie4">"The Princess And The Frog"</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">is this it? ;)</button>
     </form>
-    <div id="book-result"></div>
+    <div id="movie-result" >
+    <p id= "movie-text">
+      
+      </p> <img id= "img2" src= "https://lumiere-a.akamaihd.net/v1/images/p_sleepingbeauty_20525_0cc9243a.jpeg?region=0%2C0%2C540%2C810" width= "500" style= "display:none "/></div>
+    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      
       //Movie Question jQuery Code
+      $("#music-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#music-answer");
+        var answer = $answer.val();
+
+        if (answer === "music1") {
+          
+          $("#music-text").text("no! I enjoy this song a lot, but it's not the right answer..");
+          $("#img1").hide().attr("src", "https://cdn-images.dzcdn.net/images/artist/9e9e084e318bf2838f02ca4e9f979946/1900x1900-000000-80-0-0.jpg").show(1000)
+        } else if(answer == "music2") {
+          $("#music-text").text("Try Again!! This song is gorgeous, but there's a song I prefer more than  this one.");
+          $("#img1").hide().attr("src", "https://upload.wikimedia.org/wikipedia/en/c/c9/ImogenHeapHeadlock.png").show(1000)
+        }
+      else if (answer === "music3") {
+          $("#music-text").text("yes, yes! I got into Imogen Heap about a year ago, and I fell in love with the way she makes music. truly amazing stuff! Check out her handheld synthesizer that she uses for her songs!");
+       $("#img1").hide().attr("src", "https://i.scdn.co/image/ab67616d0000b273866872ba52cf201fc33995cc").show(1000);
+          
+        
+
+        } else if  (answer ==="music4") {
+          $("#music-text").text("Nope! Very enjoyable song, but not my favorite.");
+       $("#img1").hide().attr("src", "https://jmeshel.com//wp-content/uploads/2014/01/Imogen+Heap+Immi.jpg").show(1000)
+        }
+      });
+
+      //Book Question jQuery Code
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -62,23 +103,21 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
-        } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-text").text("Not quite..it's a good movie though.");
+          $("#img2").hide().attr("src", "https://lumiere-a.akamaihd.net/v1/images/p_sleepingbeauty_20525_0cc9243a.jpeg?region=0%2C0%2C540%2C810").show(1000)
+        } else if (answer === "movie2") {
+          $("#movie-text").text("Cute, but no..");
+          $("#img2").hide().attr("src", "https://m.media-amazon.com/images/I/81WQv5bFbfL._AC_UF894,1000_QL80_.jpg").show(1000)
+         } else if (answer === "movie4") {
+            $("#movie-text").text("The Princess and The Frog is one of the most beautiful movies I've ever watched. I'm a big fan of tradional animation, and the romance makes me literally swoon. To live in the animation style of this movie is my dying wish.");
+            $("#img2").hide().attr("src", "https://lumiere-a.akamaihd.net/v1/images/p_theprincessandthefrog_20499_1c5f55a1.jpeg").show(1000)
         }
-      });
-
-      //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
-        event.preventDefault();
-
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
-
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
-        } else {
-          $("#book-result").text("Try Again!");
+        else if (answer === "movie3"){
+          
+          $("#movie-text").text("Very cutesy movie! The animation is great, and I really enjoy the painted backgrounds.")
+          $("#img2").hide().attr("src", "https://lumiere-a.akamaihd.net/v1/images/p_thefoxandthehound_19897_37a624d3.jpeg?region=0%2C0%2C540%2C810").show(1000)
+          
+          
         }
       });
     </script>

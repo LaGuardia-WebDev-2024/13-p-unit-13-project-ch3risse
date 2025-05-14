@@ -1,22 +1,51 @@
-#movie-result {
-  background: rgb(244, 98, 181);
-  border: 5px solid black;
-  font-size: 24px;
-  height: 160px;
-  margin-top: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+#music-result {
+  background: rgb(139,69,19);
+  border: 2px solid green;
+  font-size: 14px;
+  color: rgb(194, 218, 184);
+min-height: 250px;
+  width: 100%;
+  margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  color: green;
 }
 
-#book-result {
-  background: rgb(196, 159, 255);
-  border: 5px solid black;
-  font-size: 24px;
-  height: 160px;
+#movie-result {
+  background: rgb(194, 218, 184);
+  border: 2px solid green;
+  font-size: 14px;
+  min-height: 160px;
   margin-top: 10px;
   margin-bottom: 20px;
+  text-align: center;
+  color: green;
 }
 
 hr {
-  height: 5px;
+  height: 10px;
   background-color: black;
+}
+
+html{
+  margin: auto;
+  width: 75%;
+    
+
+  background-image: url("https://i.pinimg.com/736x/13/d2/f5/13d2f5955debca26613590f4d12f0272.jpg");
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    
+}
+label {
+    font-family: "Underdog", system-ui;
+  color: white;
+  font-size: 20px;
+
+  
+}
+button {
+  font-family: "Underdog", system-ui;
 }
